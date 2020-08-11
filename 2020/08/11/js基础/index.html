@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Rainy">
+    <meta name="keywords" content="Rainy">
     <meta name="description" content="选择有时候比努力更重要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Rainy</title>
+    <title>Rainy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-29
+                    2020-08-11
                 </div>
                 
 
@@ -458,19 +458,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <p>1.冒泡排序<br>原理：从第一个开始，两个两个进行比较，根据你想降序或者升序掉换位置，比较到最后一个重新从第一个开始比较，每一轮比较的次数减一，直至只剩两个元素。<br>外层循环的次数是比较的轮数，分析可知轮数为数组长度减一；内层循环的次数是每一轮比较的次数，第一轮次数为数组长度减一，每轮比较的次数减一；<br>function sort(Array) {<br>            for (i = 0; i &lt; Array.length - 1; i++) {<br>                for (j = 0; j &lt; Array.length - i ; j++) {<br>                    if (Array[j] &gt; Array[j + 1]) {<br>                        num = Array[j];<br>                        Array[j] = Array[j + 1];<br>                        Array[j + 1] = num;<br>                    }<br>                }<br>            }<br>            return Array;<br>        }<br>        console.log(sort([5,4,3,2,1]));<br>2.判断闰年<br>闰年：能被4整除且不能被100整除或者能被400整除<br>var year = prompt(‘请输入年份：’);<br>        function isRunYear(year) {<br>            if (year % 4 == 0 &amp;&amp; year % 100 != 0 || year % 400 == 0) {<br>                flag = true;<br>            }<br>            else {<br>                flag = false;<br>            }<br>            return flag;<br>        }<br>        var yorn = isRunYear(year);<br>        alert (yorn);<br>3.倒计时<br>原理：利用时间戳（单位是毫秒），获取当前时间戳和给定时间的时间戳，求得差值，然后转换为固定格式。<br>function countDown(time) {<br>            var nowTime = +new Date();<br>            var inputTime = +new Date(time);<br>            var times = (inputTime - nowTime) / 1000;<br>            d = parseInt(times / 60 / 60 / 24);<br>            var d = d &lt; 10 ? ‘0’ + d : d;<br>            h = parseInt(times / 60 / 60 % 24);<br>            var h = h &lt; 10 ? ‘0’ + h : h;<br>            m = parseInt(times / 60 % 60);<br>            var m = m &lt; 10 ? ‘0’ + m : m;<br>            s = parseInt(times % 60);<br>            var s = s &lt; 10 ? ‘0’ + s : s;<br>            return d +’天’ + h + ‘时’ + m + ‘分’ + s + ‘秒’;<br>        }<br>        console.log(countDown(‘2020-8-8 18:00:00’));<br>        var date = new Date();<br>        console.log(date);<br>4.数组去重<br>利用Array.indexOf(value),如果Array中没有value值，则Array.indexOf(value)等于-1，把Array.indexOf(value)=-1时的value加入新的空数组即可得到去重后的数组。<br>function unique(arr) {<br>            var newArr = [];<br>            for (var i = 0; i &lt; arr.length; i++) {<br>                if (newArr.indexOf(arr[i]) === -1) {<br>                    newArr.push(arr[i]);<br>                }<br>            }<br>            return newArr;<br>        }<br>        var demo = unique([‘c’, ‘a’, ‘z’, ‘a’, ‘x’, ‘a’, ‘x’, ‘c’, ‘b’])<br>        console.log(demo);</p>
 
             </div>
             <hr/>
@@ -496,7 +484,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/07/29/hello-world/">http://yoursite.com/2020/07/29/hello-world/</a>
+                    <a href="http://yoursite.com/2020/08/11/js%E5%9F%BA%E7%A1%80/">http://yoursite.com/2020/08/11/js%E5%9F%BA%E7%A1%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -699,9 +687,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/08/11/js%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
@@ -719,9 +708,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -730,6 +719,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -737,7 +727,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/07/29/hello-world/">
@@ -767,7 +757,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
