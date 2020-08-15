@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="js第一部分ECMAScript, Rainy">
+    <meta name="keywords" content="js第二部分DOM和BOM, Rainy">
     <meta name="description" content="选择有时候比努力更重要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>js第一部分ECMAScript | Rainy</title>
+    <title>js第二部分DOM和BOM | Rainy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">js第一部分ECMAScript</h1>
+                    <h1 class="description center-align post-title">js第二部分DOM和BOM</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-11
+                    2020-08-14
                 </div>
                 
 
@@ -458,14 +458,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h3><p>原理：从第一个开始，两个两个进行比较，根据你想降序或者升序掉换位置，比较到最后一个重新从第一个开始比较，每一轮比较的次数减一，直至只剩两个元素。<br>外层循环的次数是比较的轮数，分析可知轮数为数组长度减一；内层循环的次数是每一轮比较的次数，第一轮次数为数组长度减一，每轮比较的次数减一；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function sort(Array) &#123;</span><br><span class="line">            for (i &#x3D; 0; i &lt; Array.length - 1; i++) &#123;</span><br><span class="line">                for (j &#x3D; 0; j &lt; Array.length - i ; j++) &#123;</span><br><span class="line">                    if (Array[j] &gt; Array[j + 1]) &#123;</span><br><span class="line">                        num &#x3D; Array[j];</span><br><span class="line">                        Array[j] &#x3D; Array[j + 1];</span><br><span class="line">                        Array[j + 1] &#x3D; num;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return Array;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(sort([5,4,3,2,1]));</span><br></pre></td></tr></table></figure>
-<h3 id="2-判断闰年"><a href="#2-判断闰年" class="headerlink" title="2.判断闰年"></a>2.判断闰年</h3><p>闰年：能被4整除且不能被100整除或者能被400整除</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var year &#x3D; prompt(&#39;请输入年份：&#39;);</span><br><span class="line">        function isRunYear(year) &#123;</span><br><span class="line">            if (year % 4 &#x3D;&#x3D; 0 &amp;&amp; year % 100 !&#x3D; 0 || year % 400 &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                flag &#x3D; true;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                flag &#x3D; false;</span><br><span class="line">            &#125;</span><br><span class="line">            return flag;</span><br><span class="line">        &#125;</span><br><span class="line">        var yorn &#x3D; isRunYear(year);</span><br><span class="line">        alert (yorn);</span><br></pre></td></tr></table></figure>
-<h3 id="3-倒计时"><a href="#3-倒计时" class="headerlink" title="3.倒计时"></a>3.倒计时</h3><p>原理：利用时间戳（单位是毫秒），获取当前时间戳和给定时间的时间戳，求得差值，然后转换为固定格式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function countDown(time) &#123;</span><br><span class="line">            var nowTime &#x3D; +new Date();</span><br><span class="line">            var inputTime &#x3D; +new Date(time);</span><br><span class="line">            var times &#x3D; (inputTime - nowTime) &#x2F; 1000;</span><br><span class="line">            d &#x3D; parseInt(times &#x2F; 60 &#x2F; 60 &#x2F; 24);</span><br><span class="line">            var d &#x3D; d &lt; 10 ? &#39;0&#39; + d : d;</span><br><span class="line">            h &#x3D; parseInt(times &#x2F; 60 &#x2F; 60 % 24);</span><br><span class="line">            var h &#x3D; h &lt; 10 ? &#39;0&#39; + h : h;</span><br><span class="line">            m &#x3D; parseInt(times &#x2F; 60 % 60);</span><br><span class="line">            var m &#x3D; m &lt; 10 ? &#39;0&#39; + m : m;</span><br><span class="line">            s &#x3D; parseInt(times % 60);</span><br><span class="line">            var s &#x3D; s &lt; 10 ? &#39;0&#39; + s : s;</span><br><span class="line">            return d +&#39;天&#39; + h + &#39;时&#39; + m + &#39;分&#39; + s + &#39;秒&#39;;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(countDown(&#39;2020-8-8 18:00:00&#39;));</span><br><span class="line">        var date &#x3D; new Date();</span><br><span class="line">        console.log(date);</span><br></pre></td></tr></table></figure>
-<h3 id="4-数组去重"><a href="#4-数组去重" class="headerlink" title="4.数组去重"></a>4.数组去重</h3><p>利用Array.indexOf(value),如果Array中没有value值，则Array.indexOf(value)等于-1，把Array.indexOf(value)=-1时的value加入新的空数组即可得到去重后的数组。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">            var newArr &#x3D; [];</span><br><span class="line">            for (var i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                if (newArr.indexOf(arr[i]) &#x3D;&#x3D;&#x3D; -1) &#123;</span><br><span class="line">                    newArr.push(arr[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return newArr;</span><br><span class="line">        &#125;</span><br><span class="line">        var demo &#x3D; unique([&#39;c&#39;, &#39;a&#39;, &#39;z&#39;, &#39;a&#39;, &#39;x&#39;, &#39;a&#39;, &#39;x&#39;, &#39;c&#39;, &#39;b&#39;])</span><br><span class="line">        console.log(demo);</span><br></pre></td></tr></table></figure>
+                <h3 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h3><p>1.根据ID获取元素：document.getElementById()<br>2.根据标签名获取：document.getElementsByTagName()<br>3.通过HTML5新增方法获取元素：<br>（1） 通过类名获取元素：document.getElementsByClassName();<br>（2）querySelector返回指定选择器的第一个元素对象：document.querySelector()<br>（3）querySelectorAll返回指定选择器的所有元素对象：querySelectorAll()<br>4.获取body 元素：document.body<br>5.获取html元素：document.documentElement</p>
+<h3 id="事件三要素"><a href="#事件三要素" class="headerlink" title="事件三要素"></a>事件三要素</h3><p>事件源 事件类型 事件处理程序<br>        // 1.事件源<br>        var btn = document.getElementById(‘btn’);<br>        // 2.事件类型为onclick点击事件<br>        // 3.事件处理程序<br>        btn.onclick = function() {<br>            alert(‘点秋香’);<br>        } </p>
+<h3 id="tab栏切换"><a href="#tab栏切换" class="headerlink" title="tab栏切换"></a>tab栏切换</h3><p>主要利用排他思想、自定义属性（setAttribute(‘属性名’,属性值)）和获取自定义属性（getAttribute(‘属性名’)）。</p>
+<pre><code>    var tab_list = document.querySelector(&#39;.tab_list&#39;);
+    var lis = tab_list.querySelectorAll(&#39;li&#39;);
+    var itm = document.querySelectorAll(&#39;.itm&#39;);
+    // 给每个li添加一个自定义属性
+    for (var i=0; i&lt;lis.length;i++) &#123;
+        lis[i].setAttribute(&#39;index&#39;,i)
+        lis[i].onclick = function() &#123;
+            for (var i=0; i&lt;lis.length;i++) &#123;
+                lis[i].className = &#39;&#39;;
+            &#125;
+            this.className = &#39;current&#39;;
+            // 获取自定义属性
+            var index = this.getAttribute(&#39;index&#39;);
+            // 隐藏所有tab栏对应的内容
+            for(i = 0;i &lt;itm.length;i++) &#123;
+                itm[i].style.display = &#39;none&#39;
+            &#125;
+            // 显示当前点击的tab栏的内容
+            itm[index].style.display = &#39;block&#39;;
+        &#125;
+    &#125;</code></pre>
+<h3 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h3><p>1.父节点: 目标节点.parentNode<br>2.子节点: 目标节点.childNodes<br>3 获取第一个和最后一个子节点<br>（1）利用first/lastchild获取子节点，可能包含其它类型节点<br>console.log(ol.firstChild);<br>console.log(ol.lastChild);<br>（2）利用first/lastElementChild 只支持IE9以上<br>console.log(ol.firstElementChild);<br>console.log(ol.lastElementChild);<br>（3）利用 children[n] 获取任意一个节点<br>第一个<br>console.log(ol.children[0]);<br>最后一个<br>console.log(ol.children[ol.children.length - 1]);<br>4.兄弟节点<br>var div = document.querySelector(‘div’);<br>一、（1）nextSibling获取div的下一个兄弟节点：包含文本节点元素节点等<br>console.log(div.nextSibling);<br>（2）previousSibling获取div的上一个兄弟节点: 包含文本节点元素节点等<br>console.log(div.previousSibling);<br>二、（1）nextElementSibling获取div的下一个元素节点<br>console.log(div.nextElementSibling);<br>（2）上一个元素节点<br>console.log(div.previousElementSibling);<br>5.创建并添加节点<br>(1).创建节点元素<br>var li = document.createElement(‘li’);<br>(2).添加节点<br>一 、依次往后添加:node.appendChild（child）  node父级 child子级<br>ul.appendChild(li)<br>二、添加到指定元素前面:node.insertBefore（child，指定元素）<br>var lili = document.createElement(‘li’);<br>ul.insertBefore(lili,ul.children[0]);<br>6.删除节点: 父节点.removeChild(目标节点)<br>ul.removeChild(ul.children[0]) 删除ul里面的第一个节点<br>7.克隆节点: node.cloneNode（）括号里为空或者false为浅拷贝只复制标签不复制里面的内容；括号里为true为深拷贝复制标签及里面的内容<br>var lili = ul.children[0].cloneNode(true);</p>
+
             </div>
             <hr/>
 
@@ -490,7 +508,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/08/11/js%E5%9F%BA%E7%A1%80/">http://yoursite.com/2020/08/11/js%E5%9F%BA%E7%A1%80/</a>
+                    <a href="http://yoursite.com/2020/08/14/js%E8%BF%9B%E9%98%B6/">http://yoursite.com/2020/08/14/js%E8%BF%9B%E9%98%B6/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -693,9 +711,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/08/14/js%E8%BF%9B%E9%98%B6/">
                     <div class="card-image">
@@ -713,9 +732,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -724,6 +743,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -734,24 +754,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/29/hello-world/">
+                <a href="/2020/08/11/js%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="js第一部分ECMAScript">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">js第一部分ECMAScript</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            1.冒泡排序原理：从第一个开始，两个两个进行比较，根据你想降序或者升序掉换位置，比较到最后一个重新从第一个开始比较，每一轮比较的次数减一，直至只剩两个元素。外层循环的次数是比较的轮数，分析可知轮数为数组长度减一；内层循环的次数是每一轮比较的
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-11
                             </span>
                         <span class="publish-author">
                             
