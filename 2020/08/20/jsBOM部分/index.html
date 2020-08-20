@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="js第一部分ECMAScript, Rainy">
+    <meta name="keywords" content="js第二部分BOM部分, Rainy">
     <meta name="description" content="选择有时候比努力更重要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>js第一部分ECMAScript | Rainy</title>
+    <title>js第二部分BOM部分 | Rainy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">js第一部分ECMAScript</h1>
+                    <h1 class="description center-align post-title">js第二部分BOM部分</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-11
+                    2020-08-20
                 </div>
                 
 
@@ -458,14 +458,130 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h3><p>原理：从第一个开始，两个两个进行比较，根据你想降序或者升序掉换位置，比较到最后一个重新从第一个开始比较，每一轮比较的次数减一，直至只剩两个元素。<br>外层循环的次数是比较的轮数，分析可知轮数为数组长度减一；内层循环的次数是每一轮比较的次数，第一轮次数为数组长度减一，每轮比较的次数减一；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function sort(Array) &#123;</span><br><span class="line">            for (i &#x3D; 0; i &lt; Array.length - 1; i++) &#123;</span><br><span class="line">                for (j &#x3D; 0; j &lt; Array.length - i ; j++) &#123;</span><br><span class="line">                    if (Array[j] &gt; Array[j + 1]) &#123;</span><br><span class="line">                        num &#x3D; Array[j];</span><br><span class="line">                        Array[j] &#x3D; Array[j + 1];</span><br><span class="line">                        Array[j + 1] &#x3D; num;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return Array;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(sort([5,4,3,2,1]));</span><br></pre></td></tr></table></figure>
-<h3 id="2-判断闰年"><a href="#2-判断闰年" class="headerlink" title="2.判断闰年"></a>2.判断闰年</h3><p>闰年：能被4整除且不能被100整除或者能被400整除</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var year &#x3D; prompt(&#39;请输入年份：&#39;);</span><br><span class="line">        function isRunYear(year) &#123;</span><br><span class="line">            if (year % 4 &#x3D;&#x3D; 0 &amp;&amp; year % 100 !&#x3D; 0 || year % 400 &#x3D;&#x3D; 0) &#123;</span><br><span class="line">                flag &#x3D; true;</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                flag &#x3D; false;</span><br><span class="line">            &#125;</span><br><span class="line">            return flag;</span><br><span class="line">        &#125;</span><br><span class="line">        var yorn &#x3D; isRunYear(year);</span><br><span class="line">        alert (yorn);</span><br></pre></td></tr></table></figure>
-<h3 id="3-倒计时"><a href="#3-倒计时" class="headerlink" title="3.倒计时"></a>3.倒计时</h3><p>原理：利用时间戳（单位是毫秒），获取当前时间戳和给定时间的时间戳，求得差值，然后转换为固定格式。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function countDown(time) &#123;</span><br><span class="line">            var nowTime &#x3D; +new Date();</span><br><span class="line">            var inputTime &#x3D; +new Date(time);</span><br><span class="line">            var times &#x3D; (inputTime - nowTime) &#x2F; 1000;</span><br><span class="line">            d &#x3D; parseInt(times &#x2F; 60 &#x2F; 60 &#x2F; 24);</span><br><span class="line">            var d &#x3D; d &lt; 10 ? &#39;0&#39; + d : d;</span><br><span class="line">            h &#x3D; parseInt(times &#x2F; 60 &#x2F; 60 % 24);</span><br><span class="line">            var h &#x3D; h &lt; 10 ? &#39;0&#39; + h : h;</span><br><span class="line">            m &#x3D; parseInt(times &#x2F; 60 % 60);</span><br><span class="line">            var m &#x3D; m &lt; 10 ? &#39;0&#39; + m : m;</span><br><span class="line">            s &#x3D; parseInt(times % 60);</span><br><span class="line">            var s &#x3D; s &lt; 10 ? &#39;0&#39; + s : s;</span><br><span class="line">            return d +&#39;天&#39; + h + &#39;时&#39; + m + &#39;分&#39; + s + &#39;秒&#39;;</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(countDown(&#39;2020-8-8 18:00:00&#39;));</span><br><span class="line">        var date &#x3D; new Date();</span><br><span class="line">        console.log(date);</span><br></pre></td></tr></table></figure>
-<h3 id="4-数组去重"><a href="#4-数组去重" class="headerlink" title="4.数组去重"></a>4.数组去重</h3><p>利用Array.indexOf(value),如果Array中没有value值，则Array.indexOf(value)等于-1，把Array.indexOf(value)=-1时的value加入新的空数组即可得到去重后的数组。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">            var newArr &#x3D; [];</span><br><span class="line">            for (var i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">                if (newArr.indexOf(arr[i]) &#x3D;&#x3D;&#x3D; -1) &#123;</span><br><span class="line">                    newArr.push(arr[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return newArr;</span><br><span class="line">        &#125;</span><br><span class="line">        var demo &#x3D; unique([&#39;c&#39;, &#39;a&#39;, &#39;z&#39;, &#39;a&#39;, &#39;x&#39;, &#39;a&#39;, &#39;x&#39;, &#39;c&#39;, &#39;b&#39;])</span><br><span class="line">        console.log(demo);</span><br></pre></td></tr></table></figure>
+                <h3 id="windows对象的常见事件"><a href="#windows对象的常见事件" class="headerlink" title="windows对象的常见事件"></a>windows对象的常见事件</h3><pre><code>    // 1.传统注册方式  window.onload
+    // window.onload = function() &#123;
+    //     var btn = document.querySelector(&#39;button&#39;);
+    //     btn.addEventListener(&#39;click&#39;,function()&#123;
+    //         alert(&#39;点击我&#39;)
+    //     &#125;)
+    // &#125;
+    // 2.常用注册方式 window.addEventListener(&#39;load&#39;,函数)
+    window.addEventListener(&#39;load&#39;, function () &#123;
+        var btn = document.querySelector(&#39;button&#39;);
+        btn.addEventListener(&#39;click&#39;, function () &#123;
+            alert(&#39;点击我&#39;)
+        &#125;)
+    &#125;)
+    // 3.DOMContentLoaded
+    document.addEventListener(&#39;DOMContentLoaded&#39;,function() &#123;
+        alert(33);
+    &#125;)
+    // 4.差别
+    // load 等页面内容全部加载完毕，包含dom元素 图片 flash css 等等
+    // DOMContentLoaded 是DOM加载完毕，不包含图片 flash css 等就可以执行 加载速度比load更快一些</code></pre>
+<h3 id="根据窗口大小隐藏某些组件"><a href="#根据窗口大小隐藏某些组件" class="headerlink" title="根据窗口大小隐藏某些组件"></a>根据窗口大小隐藏某些组件</h3><pre><code>    window.addEventListener(&#39;load&#39;, function () &#123;
+        var div = document.querySelector(&#39;div&#39;);
+        window.addEventListener(&#39;resize&#39;, function () &#123;
+            console.log(window.innerWidth);
+            console.log(&#39;变化了&#39;);
+            if (window.innerWidth &lt;= 800) &#123;
+                div.style.display = &#39;none&#39;;
+            &#125;
+            else&#123;
+                div.style.display = &#39;block&#39;;
+            &#125;
+        &#125;)
+    &#125;)</code></pre>
+<h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><p>1.setTimeout<br>        // 语法规范： window.setTimeout(调用函数，延时时间(毫秒))；<br>        // （1）这个window在调用的时候可以省略<br>        // （2）这个延时时间单位是毫秒 但是可以省略，默认的是0<br>        // （3）这个调用函数可以直接写函数 还可以写 函数名<br>        // （4）页面中可能有很多定时器，我们经常给定时器起名字<br>        // setTimeout(function() {<br>        //     console.log(‘时间到了’);<br>        // },2000);<br>        function calback() {<br>            console.log(‘爆炸了’);<br>        }<br>        var timer1 = setTimeout(calback,3000);<br>        // 停止定时器clearTimeout<br>        btn.addEventListener(‘click’,function() {<br>            clearTimeout(timer1);<br>        })<br>2.setInterval<br>        // 语法规范： window.setInterval(调用函数，延时时间);<br>        setInterval(function() {<br>            console.log(‘继续输出’);<br>        },1000)<br>        //差别<br>        // （1）setTimeout 延时时间到了，就去调用这个回调函数，只调用一次，就结束了这个定时器<br>        // （2）setInterval 每隔这个延时时间，就去调用这个回调函数，会调用很多次，重复调用这个函数<br>案例1：给定一个时间开始倒计时，并手动开启和关闭倒计时</p>
+<pre><code>&lt;div&gt;
+    &lt;span class=&quot;hour&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;minute&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;second&quot;&gt;3&lt;/span&gt;
+&lt;/div&gt;
+&lt;button class=&quot;begin&quot;&gt;开启定时器&lt;/button&gt;
+&lt;button class=&quot;stoped&quot;&gt;停止定时器&lt;/button&gt;
+&lt;script&gt;
+    var begin = document.querySelector(&#39;.begin&#39;);
+    var stoped = document.querySelector(&#39;.stoped&#39;)
+    var hour = document.querySelector(&#39;.hour&#39;);
+    var minute = document.querySelector(&#39;.minute&#39;);
+    var second = document.querySelector(&#39;.second&#39;);
+    var inputTime = +new Date(&#39;2020-8-19 16:00:00&#39;);
+    countDown();
+    // 开启定时器
+    var timer = null;//全局变量 null是一个空对象
+    begin.addEventListener(&#39;click&#39;, function () &#123;
+        var timer = setInterval(countDown, 1000);
+        stoped.addEventListener(&#39;click&#39;, function () &#123;
+        clearInterval(timer);
+    &#125;)
+    &#125;)
+    function countDown() &#123;
+        var nowTime = +new Date();
+        var times = (inputTime - nowTime) / 1000;
+        var h = parseInt(times / 60 / 60 % 24);
+        h = h &lt; 10 ? &#39;0&#39; + h : h;
+        hour.innerHTML = h;
+        var m = parseInt(times / 60 % 60);
+        m = m &lt; 10 ? &#39;0&#39; + m : m;
+        minute.innerHTML = m;
+        var s = parseInt(times % 60);
+        s = s &lt; 10 ? &#39;0&#39; + s : s;
+        second.innerHTML = s;
+    &#125;
+&lt;/script&gt;</code></pre>
+<p>案例2：发送验证码，并且在倒计时三秒后才能再次点击发送</p>
+<pre><code>    var btn = document.querySelector(&#39;button&#39;);
+    var time = 3;
+    btn.addEventListener(&#39;click&#39;, function () &#123;
+        btn.disabled = true;
+        var timer = setInterval(function () &#123;
+            if (time == 0) &#123;
+                clearInterval(timer);
+                btn.disabled = false
+                btn.innerHTML = &#39;发送&#39;;
+                time = 3;
+            &#125;
+            else &#123;
+                btn.innerHTML = &#39;还剩&#39; + time + &#39;秒&#39;;
+                time--;
+            &#125;
+        &#125;, 1000)
+    &#125;)</code></pre>
+<h3 id="同步异步"><a href="#同步异步" class="headerlink" title="同步异步"></a>同步异步</h3><p>同步：前一个任务结束后再执行后一个任务，程序的执行顺序和任务的排列顺序是一致的、同步的。<br>异步：你在做一件事情时需要花费一定时间，在做这件事情的同时，你还可以去处理其它事情<br>JS的异步是通过回调函数实现的。一般而言，异步任务有以下三种类型：<br>1.普通事件，如click、resize等<br>2.资源加载，如load、error等<br>3.定时器，包括setInterval、setTimeout等<br>异步任务相关回调函数添加到任务队列（消息队列）中<br>执行顺序：先执行同步任务 再执行异步任务</p>
+<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p>属性：              返回值<br>location.href       获取或者设置整个url<br>location.host       返回主机（域名）<br>location.port       返回端口号 如果未写返回 空字符串<br>location.pathname   返回路径<br>location.search     返回参数<br>location.hash       返回片段 #后面内容 常见于链接 锚点</p>
+<p>利用href和setInterval实现5秒后自动跳转</p>
+<pre><code>    var div = document.querySelector(&#39;div&#39;);
+    var time = 5;
+    countdown();
+    setInterval(countdown, 1000)
+    function countdown() &#123;
+        if (time == 0) &#123;
+            location.href = &#39;http://www.baidu.com&#39;;
+        &#125;
+        else &#123;
+            div.innerHTML = &#39;您将在&#39; + time + &#39;秒钟之后跳转&#39;;
+            time--;
+        &#125;
+    &#125;</code></pre>
+<p>获取url参数<br>页面1通过表单将数据传到页面二 index.html</p>
+<pre><code>&lt;form action=&quot;index.html&quot;&gt;
+    用户名：&lt;input type=&quot;text&quot; name=&quot;uname&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;
+&lt;/form&gt;</code></pre>
+<p>页面二通过location.search获取参数例如 ？uname=andy</p>
+<pre><code>    // console.log(location.search);
+    // 1.去掉问号 substr(&#39;起始的位置&#39;，截取几个字符)
+    var params = location.search.substr(1);
+    // 2.利用=把字符串分割为数组 split
+    var arr = params.split(&#39;=&#39;);
+    console.log(arr);
+    var div = document.querySelector(&#39;div&#39;);
+    div.innerHTML = arr[1] + &#39;欢迎您！&#39;;</code></pre>
+<p>location常见方法<br>        var btn = document.querySelector(‘button’);<br>        btn.addEventListener(‘click’,function() {<br>            // 1.记录浏览历史，所以可以实现后退功能<br>            // location.assign(‘<a target="_blank" rel="noopener" href="http://www.baidu.com&/#39;">http://www.baidu.com&#39;</a>);<br>            // 2.不记录浏览历史，不能后退<br>            // location.replace(‘<a target="_blank" rel="noopener" href="http://www.baidu.com&/#39;">http://www.baidu.com&#39;</a>);<br>            // 3.重新加载页面,如果参数为true强制刷新<br>            // location.reload();<br>        })</p>
+<h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><p>navigator对象包含有关浏览器的信息，它有很多属性，我们最常用的是userAgent,该属性可以返回由客户机发送服务器的user-agent头部的值。用以判断用户用手机端还是客户端打开页面，实现跳转。</p>
+<h3 id="history对象"><a href="#history对象" class="headerlink" title="history对象"></a>history对象</h3><p>history.forward()  ,history.go(1)  前进一个页面<br>history.back()     ,history.go(-1) 后退一个页面</p>
+
             </div>
             <hr/>
 
@@ -490,7 +606,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/08/11/js%E5%9F%BA%E7%A1%80/">http://yoursite.com/2020/08/11/js%E5%9F%BA%E7%A1%80/</a>
+                    <a href="http://yoursite.com/2020/08/20/jsBOM%E9%83%A8%E5%88%86/">http://yoursite.com/2020/08/20/jsBOM%E9%83%A8%E5%88%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -693,29 +809,32 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/08/14/jsDOM%E9%83%A8%E5%88%86%E4%B8%80/">
+                <a href="/2020/08/20/jsBOM%E9%83%A8%E5%88%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="js第二部分DOM部分一">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js第二部分BOM部分">
                         
-                        <span class="card-title">js第二部分DOM部分一</span>
+                        <span class="card-title">js第二部分BOM部分</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            获取元素1.根据ID获取元素：document.getElementById()2.根据标签名获取：document.getElementsByTagName()3.通过HTML5新增方法获取元素：（1） 通过类名获取元素：document
+                            windows对象的常见事件    // 1.传统注册方式  window.onload
+    // window.onload = function() &#123;
+    //     var btn = document.quer
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -724,6 +843,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -734,24 +854,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/29/hello-world/">
+                <a href="/2020/08/20/jsDOM%E9%83%A8%E5%88%86%E4%BA%8C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="js第二部分DOM部分二">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">js第二部分DOM部分二</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            注册事件、删除事件的方式1.传统注册事件 onclick等 只能添加一个侦听器 后面的会覆盖前面的2.事件侦听注册事件 addEventListener// 3.attachEvent ie9以前的（了解）
+    var btn = do
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-20
                             </span>
                         <span class="publish-author">
                             

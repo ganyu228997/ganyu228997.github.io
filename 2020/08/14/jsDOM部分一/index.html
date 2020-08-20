@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="js第二部分DOM和BOM, Rainy">
+    <meta name="keywords" content="js第二部分DOM部分一, Rainy">
     <meta name="description" content="选择有时候比努力更重要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>js第二部分DOM和BOM | Rainy</title>
+    <title>js第二部分DOM部分一 | Rainy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">js第二部分DOM和BOM</h1>
+                    <h1 class="description center-align post-title">js第二部分DOM部分一</h1>
                 </div>
             </div>
         </div>
@@ -483,6 +483,45 @@
         &#125;
     &#125;</code></pre>
 <h3 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h3><p>1.父节点: 目标节点.parentNode<br>2.子节点: 目标节点.childNodes<br>3 获取第一个和最后一个子节点<br>（1）利用first/lastchild获取子节点，可能包含其它类型节点<br>console.log(ol.firstChild);<br>console.log(ol.lastChild);<br>（2）利用first/lastElementChild 只支持IE9以上<br>console.log(ol.firstElementChild);<br>console.log(ol.lastElementChild);<br>（3）利用 children[n] 获取任意一个节点<br>第一个<br>console.log(ol.children[0]);<br>最后一个<br>console.log(ol.children[ol.children.length - 1]);<br>4.兄弟节点<br>var div = document.querySelector(‘div’);<br>一、（1）nextSibling获取div的下一个兄弟节点：包含文本节点元素节点等<br>console.log(div.nextSibling);<br>（2）previousSibling获取div的上一个兄弟节点: 包含文本节点元素节点等<br>console.log(div.previousSibling);<br>二、（1）nextElementSibling获取div的下一个元素节点<br>console.log(div.nextElementSibling);<br>（2）上一个元素节点<br>console.log(div.previousElementSibling);<br>5.创建并添加节点<br>(1).创建节点元素<br>var li = document.createElement(‘li’);<br>(2).添加节点<br>一 、依次往后添加:node.appendChild（child）  node父级 child子级<br>ul.appendChild(li)<br>二、添加到指定元素前面:node.insertBefore（child，指定元素）<br>var lili = document.createElement(‘li’);<br>ul.insertBefore(lili,ul.children[0]);<br>6.删除节点: 父节点.removeChild(目标节点)<br>ul.removeChild(ul.children[0]) 删除ul里面的第一个节点<br>7.克隆节点: node.cloneNode（）括号里为空或者false为浅拷贝只复制标签不复制里面的内容；括号里为true为深拷贝复制标签及里面的内容<br>var lili = ul.children[0].cloneNode(true);</p>
+<p>利用节点操作创建并删除留言</p>
+<pre><code>    var btn = document.querySelector(&#39;button&#39;);
+    var text = document.querySelector(&#39;textarea&#39;)
+    var ul = document.querySelector(&#39;ul&#39;);
+    btn.onclick = function () &#123;
+        var li = document.createElement(&#39;li&#39;);
+        li.innerHTML = text.value + &quot;&lt;a href=&#39;javascript:;&#39;&gt;删除&lt;/a&gt;&quot;;
+        if (text.value == &#39;&#39;) &#123;
+            alert(&#39;您输入的内容为空&#39;);
+        &#125;
+        else &#123;
+            // 加到后面
+            // ul.appendChild(li);
+            // 加到前面
+            ul.insertBefore(li, ul.children[0]);
+            var as = document.querySelectorAll(&#39;a&#39;);
+            for (var i = 0; i &lt; as.length; i++) &#123;
+                as[i].onclick = function () &#123;
+                    ul.removeChild(this.parentNode);
+                &#125;
+            &#125;
+
+        &#125;
+    &#125;</code></pre>
+<p>动态生成表格</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">var datas = [</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">&#x27;魏樱落&#x27;</span>,</span><br><span class="line">            subject: <span class="string">&#x27;JavaScript&#x27;</span>,</span><br><span class="line">            score: <span class="string">&#x27;100&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">&#x27;弘历&#x27;</span>,</span><br><span class="line">            subject: <span class="string">&#x27;JavaScript&#x27;</span>,</span><br><span class="line">            score: <span class="string">&#x27;98&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">&#x27;傅亨&#x27;</span>,</span><br><span class="line">            subject: <span class="string">&#x27;JavaScript&#x27;</span>,</span><br><span class="line">            score: <span class="string">&#x27;99&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: <span class="string">&#x27;明玉&#x27;</span>,</span><br><span class="line">            subject: <span class="string">&#x27;JavaScript&#x27;</span>,</span><br><span class="line">            score: <span class="string">&#x27;88&#x27;</span></span><br><span class="line">        &#125;];</span><br><span class="line">    var tbody = document.querySelector(<span class="string">&#x27;tbody&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span> (var i = 0; i &lt; datas.length; i++) &#123;</span><br><span class="line">        // 1.创建tr行</span><br><span class="line">        var tr = document.createElement(<span class="string">&#x27;tr&#x27;</span>);</span><br><span class="line">        tbody.appendChild(tr);</span><br><span class="line">        // 2.行里面创建单元格 td</span><br><span class="line">        <span class="keyword">for</span>(k <span class="keyword">in</span> datas[i]) &#123;</span><br><span class="line">            var td =  document.createElement(<span class="string">&#x27;td&#x27;</span>);</span><br><span class="line">            td.innerHTML = datas[i][k];</span><br><span class="line">            tr.appendChild(td);</span><br><span class="line">        &#125;</span><br><span class="line">        // 3.创建删除单元格</span><br><span class="line">        var td = document.createElement(<span class="string">&#x27;td&#x27;</span>);</span><br><span class="line">        td.innerHTML = <span class="string">&#x27;&lt;a href=&quot;javascript:;&quot;&gt;删除&lt;/a&gt;&#x27;</span>;</span><br><span class="line">        tr.appendChild(td);</span><br><span class="line">    &#125;</span><br><span class="line">    // 4.删除操作</span><br><span class="line">    var as = document.querySelectorAll(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    <span class="keyword">for</span>(var i = 0; i&lt;as.length;i++) &#123;</span><br><span class="line">        as[i].onclick = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">            tbody.removeChild(this.parentNode.parentNode);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="创建元素的三种方式和区别"><a href="#创建元素的三种方式和区别" class="headerlink" title="创建元素的三种方式和区别"></a>创建元素的三种方式和区别</h3><p>1.document.write()创建（了解） 是直接将内容写入页面的内容流，但是文档流执行完毕，则它会导致页面全部重绘<br>2.innerHTML创建元素不要采用字符串拼接形式，采取数组的形式效率最高</p>
+<pre><code>var inner = document.querySelector(&#39;.inner&#39;);
+var arr = [];
+for(var i = 0; i &lt;= 100; i++) &#123;
+    arr.push(&#39;&lt;a href=&quot;#&quot;&gt;百度&lt;/a&gt;&#39;)
+&#125;
+inner.innerHTML = arr.join(&#39;&#39;);</code></pre>
+<p> 3.document.createElement（）创建元素 效率稍微低一点，但结构更清晰</p>
+<pre><code> var create = document.querySelector(&#39;.create&#39;);
+for(var i = 0; i &lt;= 100; i++) &#123;
+    var a = document.createElement(&#39;a&#39;);
+    create.appendChild(a);
+&#125;</code></pre>
 
             </div>
             <hr/>
@@ -508,7 +547,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/08/14/js%E8%BF%9B%E9%98%B6/">http://yoursite.com/2020/08/14/js%E8%BF%9B%E9%98%B6/</a>
+                    <a href="http://yoursite.com/2020/08/14/jsDOM%E9%83%A8%E5%88%86%E4%B8%80/">http://yoursite.com/2020/08/14/jsDOM%E9%83%A8%E5%88%86%E4%B8%80/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -711,30 +750,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/08/14/js%E8%BF%9B%E9%98%B6/">
+                <a href="/2020/08/20/jsDOM%E9%83%A8%E5%88%86%E4%BA%8C/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="js第二部分DOM和BOM">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="js第二部分DOM部分二">
                         
-                        <span class="card-title">js第二部分DOM和BOM</span>
+                        <span class="card-title">js第二部分DOM部分二</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            获取元素1.根据ID获取元素：document.getElementById()2.根据标签名获取：document.getElementsByTagName()3.通过HTML5新增方法获取元素：（1） 通过类名获取元素：document
+                            注册事件、删除事件的方式1.传统注册事件 onclick等 只能添加一个侦听器 后面的会覆盖前面的2.事件侦听注册事件 addEventListener// 3.attachEvent ie9以前的（了解）
+    var btn = do
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-20
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -743,7 +782,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
